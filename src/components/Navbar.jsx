@@ -9,8 +9,8 @@ const Navbar = () => {
   const {user, logoutUser} = useContext(AuthContext);
   // console.log(user)
     const links = <div className="flex items-center gap-2">
-    <li><a>Item 1</a></li>
-    <NavLink to='/login'>Login</NavLink>
+
+    <NavLink to='/addTask'>Add Task</NavLink>
     <NavLink to='/register'>Register</NavLink>
 
     </div>
