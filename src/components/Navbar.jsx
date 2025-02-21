@@ -11,7 +11,7 @@ const Navbar = () => {
     const links = <div className="flex items-center gap-2">
 
     <NavLink to='/addTask'>Add Task</NavLink>
-    <NavLink to='/register'>Register</NavLink>
+    <NavLink to='/taskManager'>Task Manager</NavLink>
 
     </div>
 

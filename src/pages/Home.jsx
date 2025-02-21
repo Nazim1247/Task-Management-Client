@@ -1,9 +1,13 @@
 
 
+import TaskBoard from "./TaskBoard";
+
+
 const Home = () => {
     return (
         <div>
-            <h2>This is Home</h2>
+            <TaskBoard></TaskBoard>.
+            
         </div>
     );
 };

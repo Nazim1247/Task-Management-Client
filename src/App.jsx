@@ -1,16 +1,27 @@
 
+import { useEffect, useState } from 'react'
 import './App.css'
+import CreateTask from './components/CreateTask';
+import ListTask from './components/ListTask';
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
 
 function App() {
-  
+  const [tasks, setTasks] = useState([]);
+  console.log(tasks)
+
+  useEffect(()=>{
+    setTasks(JSON.parse(localStorage.getItem('tasks')))
+  },[])
 
   return (
-    <>
+    <DndProvider backend={HTML5Backend}>
+    <div className='flex flex-col gap-6 text-center my-8'>
       
-      <h1 className='text-2xl text-blue-600'>Vite + React</h1>
-      
-      
-    </>
+      <CreateTask tasks={tasks} setTasks={setTasks}></CreateTask>
+      <ListTask tasks={tasks} setTasks={setTasks}></ListTask>
+    </div>
+    </DndProvider>
   )
 }
 
