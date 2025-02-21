@@ -22,7 +22,7 @@ const ListTask = ({tasks,setTasks}) => {
     const statuses = ['todo','inProgress','done'];
 // console.log(statuses)
     return (
-        <div className="flex items-start gap-16 justify-center mt-6">
+        <div className="flex items-start gap-16 justify-center mt-6 ">
             {statuses.map((status,index)=>
             (<Section 
             key={index} 
@@ -81,7 +81,7 @@ const Section = ({status,tasks,setTasks,todos,inProgress,done})=>{
     }
 
     return (
-        <div ref={drop} className={`${isOver ? "bg-slate-200":""}`}>
+        <div ref={drop} className={`w-64 min-h-screen ${isOver ? "bg-slate-200":""}`}>
             <Header text={text} bg={bg} count={taskToMap.length}/>
             {taskToMap.length > 0 && taskToMap.map(task => <Task key={task.id} task={task} tasks={tasks} setTasks={setTasks}/>)}
         </div>

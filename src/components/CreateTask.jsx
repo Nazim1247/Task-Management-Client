@@ -9,7 +9,7 @@ const CreateTask = ({tasks,setTasks}) => {
         name: '',
         status: 'todo',
     })
-    console.log(task)
+    // console.log(task)
 
     const handleSubmit = (e)=>{
         e.preventDefault();
@@ -56,6 +56,18 @@ const CreateTask = ({tasks,setTasks}) => {
             <input type="text" className="input input-bordered" placeholder="Create Task"
             value={task.name} 
             onChange={(e)=> setTask({...task, id: uuidv4(), name: e.target.value})}/>
+
+            {/* <input type="text" className="input input-bordered" placeholder="Title"
+            value={task.name} 
+            onChange={(e)=> setTask({...task, id: uuidv4(), name: e.target.value})}/>
+
+            <input type="text" className="input input-bordered" placeholder="Description"
+            value={task.name} 
+            onChange={(e)=> setTask({...task, id: uuidv4(), name: e.target.value})}/>
+
+            <input type="text" className="input input-bordered" placeholder="Category"
+            value={task.name} 
+            onChange={(e)=> setTask({...task, id: uuidv4(), name: e.target.value})}/> */}
 
             <button className="btn btn-primary ml-4">Add Task</button>
         </form>

@@ -1,9 +1,9 @@
-import { useNavigate } from "react-router";
+
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 
 const AddTask = () => {
-    const navigate = useNavigate();
+    
     const axiosSecure = useAxiosSecure();
 
     const handleSubmit = async (e)=>{
@@ -12,15 +12,16 @@ const AddTask = () => {
         const title = form.title.value;
         const description = form.description.value;
         const category = form.category.value;
-        const date = form.date.value;
-        // console.log(title,description,category,date)
+        const date = Date();
+        // const date = form.date.value;
+        console.log(title,description,category,date)
+
         const taskInfo = {
             title,description,category,date
         }
         await axiosSecure.post('/tasks',taskInfo)
         .then(res =>{
             console.log(res.data)
-            navigate('/')
             if(res.data.insertedId){
                 Swal.fire({
                 position: "top-end",
@@ -43,24 +44,24 @@ const AddTask = () => {
       <h1 className="text-2xl font-bold">Add Task</h1>
       
     </div>
-    <div className="card bg-base-100 w-full lg:w-2/3 mx-auto">
+    <div className="card bg-base-100 w-full mx-auto">
       <form onSubmit={handleSubmit} className="card-body">
         <div className="form-control">
-          <label className="label">
+          {/* <label className="label">
             <span className="label-text">Title</span>
-          </label>
+          </label> */}
           <input type="text" name="title" placeholder="Title" className="input input-bordered" required />
         </div>
         <div className="form-control">
-          <label className="label">
+          {/* <label className="label">
             <span className="label-text">Description</span>
-          </label>
+          </label> */}
           <input type="text" name="description" placeholder="Description" className="input input-bordered" required />
         </div>
         <div className="form-control">
-          <label className="label">
+          {/* <label className="label">
             <span className="label-text">Category</span>
-          </label>
+          </label> */}
           <select name="category" className="select select-bordered w-full">
          <option disabled selected>Select Your Category</option>
          <option>To-Do</option>
@@ -68,12 +69,12 @@ const AddTask = () => {
          <option>Done</option>
          </select>
         </div>
-        <div className="form-control">
+        {/* <div className="form-control">
           <label className="label">
             <span className="label-text">Timestamp</span>
           </label>
           <input type="date" name="date" placeholder="Timestamp" className="input input-bordered" required />
-        </div>
+        </div> */}
         <div className="form-control mt-6">
           <button className="btn btn-primary">Add Task</button>
         </div>
