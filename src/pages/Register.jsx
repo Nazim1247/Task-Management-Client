@@ -60,41 +60,42 @@ const Register = () => {
 
     return (
         <div>
-        <div className="hero bg-base-200 min-h-screen mt-16">
+        <div className="hero bg-base-200 dark:bg-gray-900 min-h-screen mt-16">
         <div className="hero-content flex-col lg:w-2/3 mx-auto">
           <div className="text-center lg:text-left">
             <h1 className="text-2xl font-bold">Register now!</h1>
             
           </div>
-          <div className="card bg-base-100 w-full">
+          <div className="card bg-base-100 dark:bg-gray-800 w-full">
             <Link to='/login' className="text-center my-4">Already Have an Account? <span className="text-red-600">Login</span></Link>
-            <button type="button" className="btn mx-auto">
+            <button type="button" className="btn mx-auto dark:bg-gray-900 dark:text-gray-200">
             <SocialLogin></SocialLogin>
             </button>
+            <div className="divider md:w-2/3 mx-auto dark:bg-gray-900">OR</div>
             <form onSubmit={handleSubmit} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span>Name</span>
                 </label>
-                <input type="text" name="name" placeholder="name" className="input input-bordered" required />
+                <input type="text" name="name" placeholder="name" className="input input-bordered dark:bg-gray-900" required />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Photo Url</span>
+                  <span>Photo Url</span>
                 </label>
-                <input type="text" name="photo" placeholder="photo url" className="input input-bordered" required />
+                <input type="text" name="photo" placeholder="photo url" className="input input-bordered dark:bg-gray-900" required />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span>Email</span>
                 </label>
-                <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                <input type="email" name="email" placeholder="email" className="input input-bordered dark:bg-gray-900" required />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span>Password</span>
                 </label>
-                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                <input type="password" name="password" placeholder="password" className="input input-bordered dark:bg-gray-900" required />
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Register</button>

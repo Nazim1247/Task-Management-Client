@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const UpdateTask = () => {
     const navigate = useNavigate();
     const [task, setTask] = useState([]);
-    console.log(task)
+    // console.log(task)
     const {id} = useParams();
     const axiosSecure = useAxiosSecure();
 
@@ -56,26 +56,26 @@ const UpdateTask = () => {
             })
         }
     return (
-        <div className="hero bg-base-200 mt-16">
+        <div className="hero bg-base-200 dark:bg-gray-900 mt-16">
   <div className="hero-content flex-col w-full lg:w-2/3 mx-auto">
     <div className="text-center lg:text-left">
       <h1 className="text-2xl font-bold">Update Task</h1>
       
     </div>
-    <div className="card bg-base-100 w-full mx-auto">
+    <div className="card bg-base-100 dark:bg-gray-800 w-full mx-auto">
       <form onSubmit={handleSubmit} className="card-body">
         <div className="form-control">
           
-          <input type="text" name="title" defaultValue={task.title} placeholder="Title" className="input input-bordered" required />
+          <input type="text" name="title" defaultValue={task.title} placeholder="Title" className="input input-bordered dark:bg-gray-900" required />
         </div>
         <div className="form-control">
           
-          <input type="text" name="description" defaultValue={task.description} placeholder="Description" className="input input-bordered" required />
+          <input type="text" name="description" defaultValue={task.description} placeholder="Description" className="input input-bordered dark:bg-gray-900" required />
         </div>
         <div className="form-control">
           
           <select name="category" value={task.category}
-          onChange={(e)=> setTask(e.target.value)} className="select select-bordered w-full">
+          onChange={(e)=> setTask(e.target.value)} className="select select-bordered w-full dark:bg-gray-900">
          <option>Select Your Category</option>
          <option>To-Do</option>
          <option>In Progress</option>

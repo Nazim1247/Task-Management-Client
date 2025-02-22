@@ -79,7 +79,7 @@ const TaskColumn = ({ title, tasks, category, updateTaskCategory, refetch }) => 
     }));
 
     return (
-        <div ref={drop} className={`p-4 md:w-64 min-h-[200px] border rounded-lg mb-2 ${isOver ? "bg-gray-300" : "bg-gray-100"}`}>
+        <div ref={drop} className={`p-4 md:w-64 min-h-[300px] rounded-lg mb-2 ${isOver ? "bg-gray-300 dark:bg-gray-800" : "bg-gray-100 dark:bg-gray-700"}`}>
             <h2 className="text-lg font-semibold bg-primary p-2 rounded-lg text-white">{title}</h2>
             {tasks
                 .filter(task => task.category === category)
@@ -130,7 +130,7 @@ const TaskCard = ({ task, refetch }) => {
 
     return (
         <div
-            className={`border rounded-lg shadow p-2 mt-4 text-center ${isDragging ? "opacity-25" : "opacity-100"}`}
+            className={`dark:bg-gray-800 rounded-lg shadow p-2 mt-4 text-center ${isDragging ? "opacity-25" : "opacity-100"}`}
             ref={drag}
         >
             <h2 className="text-2xl font-bold">{task.category}</h2>
@@ -138,8 +138,8 @@ const TaskCard = ({ task, refetch }) => {
             <p className="font-semibold">{task.description}</p>
             <p>{task.date}</p>
             <div className="flex items-center gap-6 justify-center py-2">
-                <button className="btn btn-xs"><Link to={`/updateTask/${task._id}`}><FaEdit className="text-xl text-green-500"/></Link></button>
-                <button onClick={()=> handleRemove(task._id)} className="btn btn-xs"><MdDeleteForever className="text-2xl text-red-500"/></button>
+                <button title="Update" className="btn btn-xs dark:bg-gray-700 border-none"><Link to={`/updateTask/${task._id}`}><FaEdit className="text-xl text-green-500"/></Link></button>
+                <button title="Remove" onClick={()=> handleRemove(task._id)} className="btn btn-xs dark:bg-gray-700 border-none"><MdDeleteForever className="text-2xl text-red-500"/></button>
             </div>
         </div>
     );

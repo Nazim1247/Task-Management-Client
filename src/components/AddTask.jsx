@@ -42,25 +42,25 @@ const AddTask = () => {
     }
 
     return (
-        <div className="hero bg-base-200 rounded-xl">
+        <div className="hero bg-base-200 dark:bg-gray-700 rounded-xl">
   <div className="hero-content flex-col w-full">
-    <div className="text-center lg:text-left">
-      <h1 className="text-2xl font-bold">Add Task</h1>
+    <div className="text-center ">
+      <h3 className="text-2xl font-bold">Add Task</h3>
       
     </div>
-    <div className="card bg-base-100 w-full mx-auto">
+    <div className="card bg-base-100 dark:bg-gray-800 w-full mx-auto">
       <form onSubmit={handleSubmit} className="card-body">
         <div className="form-control">
           
-          <input type="text" name="title" placeholder="Title" className="input input-bordered" required />
+          <input type="text" name="title" placeholder="Title" className="input input-bordered dark:bg-gray-700" required />
         </div>
         <div className="form-control">
           
-          <input type="text" name="description" placeholder="Description" className="input input-bordered" required />
+          <input type="text" name="description" placeholder="Description" className="input input-bordered dark:bg-gray-700" required />
         </div>
         <div className="form-control">
           
-          <select name="category" className="select select-bordered w-full">
+          <select name="category" className="select select-bordered w-full dark:bg-gray-700">
          <option>Select Your Category</option>
          <option>To-Do</option>
          <option>In Progress</option>
@@ -68,7 +68,7 @@ const AddTask = () => {
          </select>
         </div>
         
-        <div className="form-control mt-6">
+        <div className="form-control">
           <button className="btn btn-primary">Add Task</button>
         </div>
       </form>

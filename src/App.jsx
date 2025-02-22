@@ -7,7 +7,7 @@ function App() {
   
   return (
     <div>
-    <div className='lg:flex items-start gap-6 justify-between mt-16 pt-6 w-11/12 mx-auto space-y-4'>
+    <div className='space-y-4 md:space-y-0 lg:flex items-start gap-6 justify-between mt-16 pt-6 w-11/12 mx-auto'>
      
       <div className='w-full'>
         <AddTask></AddTask>
