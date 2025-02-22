@@ -35,7 +35,8 @@ const ShowTask = () => {
             return data;
         },
         
-        staleTime: 500,
+        staleTime: 0,
+        refetchOnWindowFocus: true,
     })
 
     if(isLoading) return <p className="text-center"><span className="loading loading-spinner loading-lg"></span></p>
@@ -46,7 +47,8 @@ const ShowTask = () => {
         try {
             const taskToUpdate = tasks.find(task => task._id === taskId);
             await axiosSecure.put(`/tasks/${taskId}`, { category: newCategory, title: taskToUpdate.title, description: taskToUpdate.description });
-            refetch()
+            
+            await refetch()
 
             // setTasks(prevTasks =>
             //     prevTasks.map(task =>
@@ -74,7 +76,10 @@ const TaskColumn = ({ title, tasks, category, updateTaskCategory, refetch }) => 
     
     const [{ isOver }, drop] = useDrop(() => ({
         accept: "task",
-        drop: (item) => updateTaskCategory(item.id, category),
+        drop: async (item) => {
+            await updateTaskCategory(item.id, category);
+            refetch();},
+
         collect: (monitor) => ({
             isOver: !!monitor.isOver()
         })
