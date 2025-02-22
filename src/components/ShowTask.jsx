@@ -134,7 +134,7 @@ const TaskCard = ({ task, refetch }) => {
             ref={drag}
         >
             <h2 className="text-2xl font-bold">{task.category}</h2>
-            <h2 className="text-xl font-bold">{task.title}</h2>
+            <h2 className="text-xl font-bold text-green-500">{task.title}</h2>
             <p className="font-semibold">{task.description}</p>
             <p>{task.date}</p>
             <div className="flex items-center gap-6 justify-center py-2">
