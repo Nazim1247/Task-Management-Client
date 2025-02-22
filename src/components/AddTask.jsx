@@ -3,8 +3,10 @@ import { useContext } from "react";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { AuthContext } from "./AuthProvider";
+import { useQueryClient } from "@tanstack/react-query";
 
 const AddTask = () => {
+  const queryClient = useQueryClient();
     const {user} = useContext(AuthContext)
     const axiosSecure = useAxiosSecure();
 
@@ -34,6 +36,8 @@ const AddTask = () => {
                 showConfirmButton: false,
                 timer: 1500
                 });
+
+                queryClient.invalidateQueries(["tasks", user?.email]);
             }
         })
         .catch(error =>{

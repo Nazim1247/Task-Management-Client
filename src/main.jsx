@@ -29,6 +29,13 @@ import AuthProvider from './components/AuthProvider.jsx'
 import { RouterProvider } from 'react-router'
 
 const queryClient = new QueryClient()
+// const queryClient = new QueryClient({
+//   defaultOptions: {
+//       queries: {
+//           staleTime: 0, // সব query-র জন্য default ভাবে staleTime 0 সেট হবে
+//       },
+//   },
+// });
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

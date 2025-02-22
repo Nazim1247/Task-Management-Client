@@ -33,7 +33,9 @@ const ShowTask = () => {
         queryFn: async()=>{
             const {data} = await axiosSecure.get(`/tasks/${user?.email}`)
             return data;
-        }
+        },
+        
+        staleTime: 500,
     })
 
     if(isLoading) return <p className="text-center"><span className="loading loading-spinner loading-lg"></span></p>
