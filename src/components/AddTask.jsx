@@ -42,7 +42,7 @@ const AddTask = () => {
     }
 
     return (
-        <div className="hero bg-base-200">
+        <div className="hero bg-base-200 rounded-xl">
   <div className="hero-content flex-col w-full">
     <div className="text-center lg:text-left">
       <h1 className="text-2xl font-bold">Add Task</h1>

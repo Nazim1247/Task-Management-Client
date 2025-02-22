@@ -56,7 +56,7 @@ const UpdateTask = () => {
             })
         }
     return (
-        <div className="hero bg-base-200">
+        <div className="hero bg-base-200 mt-16">
   <div className="hero-content flex-col w-full lg:w-2/3 mx-auto">
     <div className="text-center lg:text-left">
       <h1 className="text-2xl font-bold">Update Task</h1>

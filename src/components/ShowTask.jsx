@@ -7,6 +7,8 @@ import { useQuery } from "@tanstack/react-query";
 import { AuthContext } from "./AuthProvider";
 import Swal from "sweetalert2";
 import { Link } from "react-router";
+import { FaEdit } from "react-icons/fa";
+import { MdDeleteForever } from "react-icons/md";
 
 const ShowTask = () => {
     const {user} =  useContext(AuthContext);
@@ -57,7 +59,7 @@ const ShowTask = () => {
     return (
         <div>
             {/* <h2>All Tasks: {tasks.length}</h2> */}
-            <div className="flex items-start gap-6 justify-center">
+            <div className="md:flex items-start gap-6 justify-between">
                 <TaskColumn title="To-Do" tasks={tasks} category="To-Do" updateTaskCategory={updateTaskCategory} refetch={refetch}/>
                 <TaskColumn title="In Progress" tasks={tasks} category="In Progress" updateTaskCategory={updateTaskCategory} refetch={refetch}/>
                 <TaskColumn title="Done" tasks={tasks} category="Done" updateTaskCategory={updateTaskCategory} refetch={refetch}/>
@@ -77,7 +79,7 @@ const TaskColumn = ({ title, tasks, category, updateTaskCategory, refetch }) => 
     }));
 
     return (
-        <div ref={drop} className={`p-4 w-64 min-h-[200px] border rounded-lg ${isOver ? "bg-gray-300" : "bg-gray-100"}`}>
+        <div ref={drop} className={`p-4 md:w-64 min-h-[200px] border rounded-lg mb-2 ${isOver ? "bg-gray-300" : "bg-gray-100"}`}>
             <h2 className="text-lg font-semibold bg-primary p-2 rounded-lg text-white">{title}</h2>
             {tasks
                 .filter(task => task.category === category)
@@ -128,16 +130,16 @@ const TaskCard = ({ task, refetch }) => {
 
     return (
         <div
-            className={`border rounded-lg shadow py-2 px-4 mt-4 ${isDragging ? "opacity-25" : "opacity-100"}`}
+            className={`border rounded-lg shadow p-2 mt-4 text-center ${isDragging ? "opacity-25" : "opacity-100"}`}
             ref={drag}
         >
-            <h2>{task.category}</h2>
-            <h2>{task.title}</h2>
-            <p>{task.description}</p>
+            <h2 className="text-2xl font-bold">{task.category}</h2>
+            <h2 className="text-xl font-bold">{task.title}</h2>
+            <p className="font-semibold">{task.description}</p>
             <p>{task.date}</p>
-            <div className="flex items-center gap-6 justify-center">
-                <Link to={`/updateTask/${task._id}`}>E</Link>
-                <button onClick={()=> handleRemove(task._id)} className="btn btn-xs">X</button>
+            <div className="flex items-center gap-6 justify-center py-2">
+                <button className="btn btn-xs"><Link to={`/updateTask/${task._id}`}><FaEdit className="text-xl text-green-500"/></Link></button>
+                <button onClick={()=> handleRemove(task._id)} className="btn btn-xs"><MdDeleteForever className="text-2xl text-red-500"/></button>
             </div>
         </div>
     );
