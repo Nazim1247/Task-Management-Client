@@ -1,9 +1,10 @@
 import { useContext } from "react";
-import { AuthContext } from "../provider/AuthProvider";
+// import { AuthContext } from "../provider/AuthProvider";
 import { Link, useNavigate } from "react-router";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import SocialLogin from "../social/SocialLogin";
+import { AuthContext } from "../components/AuthProvider";
 
 
 const Register = () => {

@@ -7,7 +7,7 @@ const TaskManager = () => {
 
     // Fetch Tasks from Backend
     useEffect(() => {
-        fetch("http://localhost:5000/tasks")
+        fetch("https://task-management-server-five-pied.vercel.app/tasks")
             .then((res) => res.json())
             .then((data) => setTasks(data))
             .catch((err) => console.error("Error fetching tasks:", err));
@@ -26,7 +26,7 @@ const TaskManager = () => {
             category: "To-Do",
         };
 
-        fetch("http://localhost:5000/tasks", {
+        fetch("https://task-management-server-five-pied.vercel.app/tasks", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

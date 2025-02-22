@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router";
-import { AuthContext } from "../provider/AuthProvider";
+// import { AuthContext } from "../provider/AuthProvider";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { AuthContext } from "../components/AuthProvider";
 
 
 const SocialLogin = () => {

@@ -1,24 +1,25 @@
 import { useContext } from "react";
-import { Link, NavLink, useNavigate } from "react-router";
-import { AuthContext } from "../provider/AuthProvider";
+import { Link } from "react-router";
+// import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
+import { AuthContext } from "./AuthProvider";
 
 
 const Navbar = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const {user, logoutUser} = useContext(AuthContext);
   // console.log(user)
     const links = <div className="flex items-center gap-2">
 
-    <NavLink to='/addTask'>Add Task</NavLink>
-    <NavLink to='/taskManager'>Task Manager</NavLink>
+    {/* <NavLink to='/addTask'>Add Task</NavLink>
+    <NavLink to='/taskManager'>Task Manager</NavLink> */}
 
     </div>
 
 const handleLogout = ()=>{
   logoutUser()
   .then(() =>{
-    navigate('/login')
+    // navigate('/login')
     Swal.fire({
     position: "top-center",
     icon: "success",
