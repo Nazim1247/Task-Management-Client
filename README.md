@@ -1,8 +1,47 @@
-# React + Vite
+# Frontend - Task Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Short Description
+This is the frontend for a Task Management Application built with React and Vite. It provides users with an intuitive interface to create, update, delete, and reorder tasks seamlessly.
 
-Currently, two official plugins are available:
+## Live Link
+### https://task-management-ae398.web.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Dependencies
+- React
+- React Router DOM
+- Axios
+- Firebase Authentication
+- React Query
+- Tailwind CSS
+- React DnD (for drag and drop functionality)
+
+## Installation Steps
+1. Clone the repository:
+   ```sh
+   git clone <repository-url>
+   ```
+2. Navigate to the project folder:
+   ```sh
+   cd frontend
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+4. Create a `.env` file and add Firebase configuration:
+   ```sh
+   VITE_FIREBASE_API_KEY=your_api_key
+   VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+   ```
+5. Start the development server:
+   ```sh
+   npm run dev
+   ```
+
+## Technologies Used
+- React (Vite)
+- Tailwind CSS
+- Firebase Authentication
+- Axios for API requests
+- React Query for state management
+- React DnD for drag-and-drop functionality
