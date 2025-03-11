@@ -1,12 +1,11 @@
+import ShowTask from "../components/ShowTask";
 
-
-import TaskBoard from "./TaskBoard";
 
 
 const Home = () => {
     return (
         <div>
-            <TaskBoard></TaskBoard>.
+            <ShowTask></ShowTask>
             
         </div>
     );

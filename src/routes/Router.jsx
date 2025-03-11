@@ -3,8 +3,9 @@ import MainLayout from "../layouts/MainLayout";
 import ErrorPage from "../errorPage/ErrorPage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import App from "../App";
 import UpdateTask from "../pages/UpdateTask";
+import AddTask from "../components/AddTask";
+import Home from "../pages/Home";
 
 const router = createBrowserRouter([
     {
@@ -15,7 +16,11 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <App></App>
+                element: <Home></Home>
+            },
+            {
+                path: '/addTask',
+                element: <AddTask></AddTask>
             },
             {
                 path: '/login',

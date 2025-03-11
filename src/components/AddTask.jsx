@@ -4,9 +4,10 @@ import useAxiosSecure from "../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { AuthContext } from "./AuthProvider";
 import { useQueryClient } from "@tanstack/react-query";
+import { useNavigate } from "react-router";
 
 const AddTask = () => {
-  
+  const navigate = useNavigate();
   const queryClient = useQueryClient();
     const {user} = useContext(AuthContext)
     const axiosSecure = useAxiosSecure();
@@ -37,6 +38,7 @@ const AddTask = () => {
                 showConfirmButton: false,
                 timer: 1500
                 });
+                navigate('/')
 
                 queryClient.invalidateQueries(["tasks", user?.email]);
             }
@@ -47,7 +49,7 @@ const AddTask = () => {
     }
 
     return (
-        <div className="hero bg-base-200 dark:bg-gray-700 rounded-xl">
+        <div className="hero bg-base-200 dark:bg-gray-700 rounded-xl lg:w-2/3 mx-auto">
   <div className="hero-content flex-col w-full">
     <div className="text-center ">
       <h3 className="text-2xl font-bold">Add Task</h3>

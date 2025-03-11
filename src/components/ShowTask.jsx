@@ -86,7 +86,7 @@ const TaskColumn = ({ title, tasks, category, updateTaskCategory, refetch }) => 
     }));
 
     return (
-        <div ref={drop} className={`p-4 md:w-64 min-h-[300px] rounded-lg mb-2 ${isOver ? "bg-gray-300 dark:bg-gray-800" : "bg-gray-100 dark:bg-gray-700"}`}>
+        <div ref={drop} className={`p-4 w-full min-h-[300px] rounded-lg mb-2 ${isOver ? "bg-gray-300 dark:bg-gray-800" : "bg-gray-100 dark:bg-gray-700"}`}>
             <h2 className="text-lg font-semibold bg-primary p-2 rounded-lg text-white">{title}</h2>
             {tasks
                 .filter(task => task.category === category)

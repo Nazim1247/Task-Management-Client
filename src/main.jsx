@@ -32,7 +32,7 @@ const queryClient = new QueryClient()
 // const queryClient = new QueryClient({
 //   defaultOptions: {
 //       queries: {
-//           staleTime: 0, // সব query-র জন্য default ভাবে staleTime 0 সেট হবে
+//           staleTime: 0,
 //       },
 //   },
 // });
